@@ -64,11 +64,11 @@ TO
 
 Give Permission!
 
-> sudo chmod 777 /var/html/www/trace.sh
+> sudo chmod 777 /var/www/html/trace.sh
 
 Run it!
 
-> ./var/html/www/trace.sh 
+> ./var/www/html/trace.sh 
 
 4.3 Go through all the steps in entering the details (VERY SIMPLE!!!)
 
@@ -87,11 +87,11 @@ Run it!
 ##### 5.3.1 Terminal (Send it to slack)
 Give Permission!
 
-> sudo chmod 777 /var/html/www/2slack.sh
+> sudo chmod 777 /var/www/html/2slack.sh
 
 Run it!
 
-> ./var/html/www/2slack.sh 
+> ./var/www/html/2slack.sh 
 
 ## SAMPLE OUTPUT (END OF DEMO).
 
