@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Main program
-slackwebhook="https://hooks.slack.com/services/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"
+slackwebhook="PASTE_YOUR_WEBHOOK_HERE"
 read -d '' payload << EOF
 {
 	"channel": "#nus-phishing-dbs",
