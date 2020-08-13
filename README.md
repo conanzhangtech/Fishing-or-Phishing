@@ -7,7 +7,7 @@ I, SHALL NOT BE LIABLE FOR ANY DAMAGED OR LEGAL CONSENTS BY YOUR USAGE OF THIS P
 ## 1. INTRODUCTION
 
 The following demonstration illustrates how an attacker is able to create a public wireless network, and spoof your data.
-At the same time, the demonstration also showcase how the attacker processes your information and impersonate themselves as someone of authority and obtain more of your sensitive data such as credit card information.
+At the same time, the demonstration also showcase how the attacker processes your information and using various methods to send these data back to themselves.
 
 ## 2. VIDEO DEMO
 
