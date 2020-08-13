@@ -18,8 +18,8 @@ No video yet, I will make one soon. ^_^.
 #### In this section, I will be explaining what are the required packages before we start the installation.
 1. Ubuntu 18.04 and above
 > https://ubuntu.com/download/desktop
-2. apache web server package
-> apt install apache
+2. apache and php web server package
+> apt install apache php -y
 3. git package
 > apt install git
 4. Slack workspace webhook integration. (OPTIONAL)
