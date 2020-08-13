@@ -107,7 +107,7 @@ From the above data, we can safely deduce the following information:
 
 > User ID: 1234
 >
-> PIN: 1234
+> PIN: 12341234
 
 ##### 2. METHOD 2 (YOU NEED TO OPEN YOUR SLACK WORKSPACE TO SEE IT)
 
@@ -126,7 +126,7 @@ From the above data, we can safely deduce the following information: (TAKE THE L
 
 > User ID: 1234
 >
-> PIN: 1234
+> PIN: 12341234
 
 #### NOTE: TO ENSURE THE YOU GET A MESSAGE TO YOUR SLACK WORKSPACE, CHANGE THE CONTENTS IN > 2slack.sh < ACCORDINGLY!
 
