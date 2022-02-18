@@ -134,6 +134,5 @@ From the above data, we can safely deduce the following information: (TAKE THE L
 
 # CREDIT AND SUPPORT
 
-#### ZHANG TIANCI CONAN
-#### TELEGRAM: https://t.me/conan97zhang
-#### INSTAGRAM: https://instagram.com/conan97zhang
+#### Conan Zhang | https://conan97zhang.info
+#### LINKEDIN: https://linkedin.com/in/conan97zhang
